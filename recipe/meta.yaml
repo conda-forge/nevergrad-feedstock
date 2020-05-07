@@ -1,34 +1,32 @@
 {% set name = "nevergrad" %}
-{% set version = "0.4.0.post3" %}
+{% set version = "0.4.1" %}
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bdc3d0e7430e7a8d338d516eeb17eb7923f06ba66e2277d599661a3c06d6fa5d
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 4339fc9b925e0f4ae7a47c887bedc3e8e620e11ee517f97d6df6ac030b48abc1
 
 build:
-  noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - pip
-    - python
-  run:
-    - python
     - bayesian-optimization >=1.1.0
     - cma >=2.6.0
     - numpy >=1.15.0
-    - pandas >=0.23.4
+    - pip
+    - python
     - typing_extensions >=3.6.6
-    - gym
-    - pytorch
-    - requests
-    - matplotlib-base
+  run:
+    - bayesian-optimization >=1.1.0
+    - cma >=2.6.0
+    - numpy >=1.15.0
+    - python
+    - typing_extensions >=3.6.6
 
 test:
   imports:
@@ -38,6 +36,8 @@ test:
     - nevergrad.functions
     - nevergrad.functions.arcoating
     - nevergrad.functions.games
+    - nevergrad.functions.images
+    - nevergrad.functions.ml
     - nevergrad.functions.mlda
     - nevergrad.functions.multiobjective
     - nevergrad.functions.photonics
@@ -61,3 +61,4 @@ extra:
     - oblute
     - rluria14
     - ndmaxar
+    - rpanai
