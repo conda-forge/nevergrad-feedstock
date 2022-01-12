@@ -70,6 +70,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - oblute
     - rluria14
     - ndmaxar
