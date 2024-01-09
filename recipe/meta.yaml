@@ -1,5 +1,5 @@
 {% set name = "nevergrad" %}
-{% set version = "0.13.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d362cdebda4e0e5ea4321a79a6510f6e64cd4550b395650c4174d4c99b24993d
+  sha256: 401eff93de6cd57a4a31f30a76149b638183ba9ba31eddb12a99a4306b43c671
 
 build:
   noarch: python
@@ -25,10 +25,9 @@ requirements:
     - numpy >=1.24.0
     - pandas >=1.0
     - typing_extensions >=3.6.6
-    # optional but enables all methods:
-    - pybobyqa >=1.2
-    - ax-platform
-    - nlopt
+    - pybobyqa >=1.2 # optional dependency but small package, can keep it for now
+    - nlopt # optional dependency but small package
+    # - ax-platform # optional and way too large to include by default
 
 test:
   imports:
@@ -54,3 +53,4 @@ extra:
     - rluria14
     - ndmaxar
     - aldanor
+    - traversaro
