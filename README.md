@@ -151,4 +151,5 @@ Feedstock Maintainers
 * [@ndmaxar](https://github.com/ndmaxar/)
 * [@oblute](https://github.com/oblute/)
 * [@rluria14](https://github.com/rluria14/)
+* [@traversaro](https://github.com/traversaro/)
 
